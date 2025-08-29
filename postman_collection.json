@@ -1,0 +1,306 @@
+{
+  "info": {
+    "name": "Pure PHP Pig Game API",
+    "_postman_id": "c3f082f0-1c8a-4c95-8d1a-pp-pp",
+    "description": "Endpoints for PURE PHP MVC Pig Game",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/auth/register",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"user1@example.com\", \"username\": \"user1\", \"password\": \"User123!\"}"
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/auth/login",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"user1@example.com\", \"password\": \"User123!\"}"
+        }
+      }
+    },
+    {
+      "name": "Player Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/player/profile",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "player",
+            "profile"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Pigs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/pigs",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "pigs"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Feed Pig",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/pigs/1/feed",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "pigs",
+            "1",
+            "feed"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"food_id\": 1}"
+        }
+      }
+    },
+    {
+      "name": "List Food",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/food",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "food"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Food Qty",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/food/add",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "food",
+            "add"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"food_id\": 1, \"qty\": 20}"
+        }
+      }
+    },
+    {
+      "name": "Daily Quests",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/quests/daily",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "quests",
+            "daily"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Claim Quest 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/quests/claim/1",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "quests",
+            "claim",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Admin: Ban User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{admin_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/admin/ban",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "admin",
+            "ban"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user_id\": 2}"
+        }
+      }
+    },
+    {
+      "name": "Admin: Unban User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{admin_token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{base}}/admin/unban",
+          "host": [
+            "{{base}}"
+          ],
+          "path": [
+            "admin",
+            "unban"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"user_id\": 2}"
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base",
+      "value": "http://localhost"
+    },
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "admin_token",
+      "value": ""
+    }
+  ]
+}
